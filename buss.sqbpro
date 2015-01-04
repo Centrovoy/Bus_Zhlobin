@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="D:/Develop/Projects/Bus/buss"/><window><current_tab id="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="449"/><expanded_item id="0" parent="-1"/><expanded_item id="1" parent="-1"/><expanded_item id="2" parent="-1"/><expanded_item id="3" parent="-1"/></tab_structure><tab_browse><current_table name="bus_number"/><column_widths data="AAAAAgAAAB4AcwBxAGwAaQB0AGUAXwBzAGUAcQB1AGUAbgBjAGUAAAABAAAAAAAAAAAAAAAMAG4AdQBtAGIAZQByAAAAAQAAAAAAAAAA"/><sort column="0" order="0"/></tab_browse><tab_sql><sql name="1.sql">CREATE TABLE `bus_number` (
+  `id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  `number` INTEGER
+);
+
+CREATE TABLE `bus_station` (
+  `id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  `name` TEXT
+);
+
+CREATE TABLE `schedule` (
+  `id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  `time` TIME,
+  `bus_station` INTEGER,
+  `bus_number` INTEGER,
+  `direction` INTEGER
+);
+
+ALTER TABLE `schedule` ADD CONSTRAINT `schedule_fk1` FOREIGN KEY (`bus_station`) REFERENCES bus_station(`id`);
+ALTER TABLE `schedule` ADD CONSTRAINT `schedule_fk2` FOREIGN KEY (`bus_number`) REFERENCES bus_number(`id`);</sql><sql name="SQL 2">CREATE TABLE &quot;android_metadata&quot; (&quot;locale&quot; TEXT DEFAULT 'en_US');
+INSERT INTO &quot;android_metadata&quot; VALUES ('en_US');</sql><current_tab id="1"/></tab_sql></sqlb_project>
